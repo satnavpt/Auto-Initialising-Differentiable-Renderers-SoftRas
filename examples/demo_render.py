@@ -60,7 +60,7 @@ def main():
     # draw object from different sigma and gamma
     loop = tqdm.tqdm(list(np.arange(-4, -2, 0.2)))
     transform.set_eyes_from_angles(camera_distance, elevation, 45)
-    writer = imageio.get_writer(os.path.join(args.output_dir, 'bluring.gif'), mode='I')
+    writer = imageio.get_writer(os.path.join(args.output_dir, 'blurring.gif'), mode='I')
     for num, gamma_pow in enumerate(loop):
 
         # render mesh
