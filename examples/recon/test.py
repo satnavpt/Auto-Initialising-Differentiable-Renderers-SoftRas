@@ -58,7 +58,7 @@ state_dicts = torch.load(args.model_directory)
 model.load_state_dict(state_dicts['model'], strict=True)
 model.eval()
 
-dataset_val = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(','), 'val')
+dataset_val = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(',')[:3], 'val')
 
 directory_output = './data/results/test'
 os.makedirs(directory_output, exist_ok=True)

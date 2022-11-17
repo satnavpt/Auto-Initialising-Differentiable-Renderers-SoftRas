@@ -12,6 +12,10 @@ import numpy as np
 import imageio
 import argparse
 
+# deal with images
+import PIL
+from PIL import Image
+
 import soft_renderer as sr
 
 current_dir = os.path.dirname(os.path.realpath(__file__))

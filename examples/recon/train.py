@@ -19,7 +19,8 @@ CLASS_IDS_ALL = (
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-4
 LR_TYPE = 'step'
-NUM_ITERATIONS = 250000
+# NUM_ITERATIONS = 250000
+NUM_ITERATIONS = 10000
 
 LAMBDA_LAPLACIAN = 5e-3
 LAMBDA_FLATTEN = 5e-4
@@ -86,8 +87,7 @@ if args.resume_path:
     start_iter = int(os.path.split(args.resume_path)[1][11:].split('.')[0]) + 1
     print('Resuming from %s iteration' % start_iter)
 
-dataset_train = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(','), 'train')
-
+dataset_train = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(',')[:3], 'train')
 
 def train():
     end = time.time()
