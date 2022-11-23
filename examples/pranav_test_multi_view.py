@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import os
 import tqdm
 import numpy as np
@@ -15,12 +16,16 @@ import argparse
 # deal with images
 import PIL
 from PIL import Image
-
 import soft_renderer as sr
+import re
+
+def sorted_alphanumeric(data):
+    convert = lambda text: int(text) if text.isdigit() else text.lower()
+    alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ] 
+    return sorted(data, key=alphanum_key)
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 data_dir = os.path.join(current_dir, '../data')
-
 
 class Model(nn.Module):
     def __init__(self, template_path):
@@ -65,15 +70,15 @@ def neg_iou_loss(predict, target):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--filename-input', type=str,
-                        default=os.path.join(data_dir, 'source.npy'))
+                        default=os.path.join(data_dir, 'aloi/sil_source_256.npy'))
     parser.add_argument('-c', '--camera-input', type=str,
                         default=os.path.join(data_dir, 'camera.npy'))
     parser.add_argument('-t', '--template-mesh', type=str,
                         default=os.path.join(data_dir, 'obj/sphere/sphere_1352.obj'))
     parser.add_argument('-o', '--output-dir', type=str,
-                        default=os.path.join(data_dir, 'results/output_deform'))
+                        default=os.path.join(data_dir, 'results/deform_aloi'))
     parser.add_argument('-b', '--batch-size', type=int,
-                        default=120)
+                        default=72)
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -81,14 +86,20 @@ def main():
     model = Model(args.template_mesh).cuda()
     transform = sr.LookAt(viewing_angle=15)
     lighting = sr.Lighting()
-    rasterizer = sr.SoftRasterizer(image_size=64, sigma_val=1e-4, aggr_func_rgb='hard')
+    rasterizer = sr.SoftRasterizer(image_size=256, sigma_val=1e-4, aggr_func_rgb='hard')
 
-    # read training images and camera poses
-    images = np.load(args.filename_input).astype('float32') / 255.
-    cameras = np.load(args.camera_input).astype('float32')
+    object_id = 13
+    images = np.load(args.filename_input)[(72*object_id):(72*(object_id+1))].astype('float32') / 255.
+    out_dir = os.path.join(args.output_dir, str(object_id+1))
+    os.makedirs(out_dir, exist_ok=True)
+    
+    cameras = []
+    # for _ in range(1000):
+    for i in range(72):
+        cameras.append([2.732, 0., i*5.])
+    cameras = np.array(cameras).astype('float32')
+
     optimizer = torch.optim.Adam(model.parameters(), 0.01, betas=(0.5, 0.99))
-    print(images.shape)
-    return
 
     camera_distances = torch.from_numpy(cameras[:, 0])
     elevations = torch.from_numpy(cameras[:, 1])
@@ -122,10 +133,10 @@ def main():
         if i % 100 == 0:
             image = images_pred.detach().cpu().numpy()[0].transpose((1, 2, 0))
             writer.append_data((255*image).astype(np.uint8))
-            imageio.imsave(os.path.join(args.output_dir, 'deform_%05d.png' % i), (255*image[..., -1]).astype(np.uint8))
+            imageio.imsave(os.path.join(out_dir, 'sil_%05d.png' % i), (255*image[..., -1]).astype(np.uint8))
 
-    # save optimized mesh
-    model(1)[0].save_obj(os.path.join(args.output_dir, 'plane.obj'), save_texture=False)
+            # save optimized mesh
+            model(1)[0].save_obj(os.path.join(out_dir, ((str(object_id+1)) + ('mesh_%05d.obj' % i))), save_texture=False)
 
 
 if __name__ == '__main__':

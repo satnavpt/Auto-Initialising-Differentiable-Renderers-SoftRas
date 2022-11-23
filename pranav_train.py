@@ -25,8 +25,8 @@ NUM_ITERATIONS = 10000
 LAMBDA_LAPLACIAN = 5e-3
 LAMBDA_FLATTEN = 5e-4
 
-PRINT_FREQ = 5
-DEMO_FREQ = 10
+PRINT_FREQ = 100
+DEMO_FREQ = 1000
 SAVE_FREQ = 10000
 RANDOM_SEED = 0
 
@@ -87,7 +87,7 @@ if args.resume_path:
     start_iter = int(os.path.split(args.resume_path)[1][11:].split('.')[0]) + 1
     print('Resuming from %s iteration' % start_iter)
 
-dataset_train = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(',')[:1], 'train')
+dataset_train = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(',')[:3], 'train')
 
 def train():
     end = time.time()

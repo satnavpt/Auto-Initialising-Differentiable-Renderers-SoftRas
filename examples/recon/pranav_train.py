@@ -12,21 +12,20 @@ import imageio
 import time
 import os
 
-CLASS_IDS_ALL = (
-    '02691156,02828884,02933112,02958343,03001627,03211117,03636649,' +
-    '03691459,04090263,04256520,04379243,04401088,04530566')
+object_ids = range(1,1001)
 
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-4
 LR_TYPE = 'step'
 # NUM_ITERATIONS = 250000
 NUM_ITERATIONS = 10000
+# NUM_ITERATIONS = 100000
 
 LAMBDA_LAPLACIAN = 5e-3
 LAMBDA_FLATTEN = 5e-4
 
-PRINT_FREQ = 5
-DEMO_FREQ = 10
+PRINT_FREQ = 100
+DEMO_FREQ = 500
 SAVE_FREQ = 10000
 RANDOM_SEED = 0
 
@@ -45,7 +44,6 @@ parser.add_argument('-eid', '--experiment-id', type=str)
 parser.add_argument('-md', '--model-directory', type=str, default=MODEL_DIRECTORY)
 parser.add_argument('-r', '--resume-path', type=str, default=RESUME_PATH)
 parser.add_argument('-dd', '--dataset-directory', type=str, default=DATASET_DIRECTORY)
-parser.add_argument('-cls', '--class-ids', type=str, default=CLASS_IDS_ALL)
 parser.add_argument('-is', '--image-size', type=int, default=IMAGE_SIZE)
 parser.add_argument('-b', '--batch-size', type=int, default=BATCH_SIZE)
 
@@ -72,6 +70,8 @@ directory_output = os.path.join(args.model_directory, args.experiment_id)
 os.makedirs(directory_output, exist_ok=True)
 image_output = os.path.join(directory_output, 'pic')
 os.makedirs(image_output, exist_ok=True)
+mesh_output = os.path.join(directory_output, 'mesh')
+os.makedirs(mesh_output, exist_ok=True)
 
 # setup model & optimizer
 model = models.Model('data/obj/sphere/sphere_642.obj', args=args)
@@ -87,7 +87,7 @@ if args.resume_path:
     start_iter = int(os.path.split(args.resume_path)[1][11:].split('.')[0]) + 1
     print('Resuming from %s iteration' % start_iter)
 
-dataset_train = datasets.ShapeNet(args.dataset_directory, args.class_ids.split(',')[:1], 'train')
+dataset_train = datasets.ALOI(object_ids=object_ids[:5], set_name='train')
 
 def train():
     end = time.time()
@@ -139,7 +139,7 @@ def train():
         # save demo images
         if i % args.demo_freq == 0:
             demo_image = images_a[0:1]
-            demo_path = os.path.join(directory_output, 'demo_%07d.obj' % i)
+            demo_path = os.path.join(mesh_output, 'demo_%07d.obj' % i)
             demo_v, demo_f = model.reconstruct(demo_image)
             srf.save_obj(demo_path, demo_v[0], demo_f[0])
 
@@ -172,12 +172,10 @@ def adjust_learning_rate(optimizers, learning_rate, i, method):
             param_group['lr'] = lr
     return lr
 
-
 def adjust_sigma(sigma, i):
     decay = 0.3
     if i >= 150000:
         sigma *= decay
     return sigma
-
 
 train()

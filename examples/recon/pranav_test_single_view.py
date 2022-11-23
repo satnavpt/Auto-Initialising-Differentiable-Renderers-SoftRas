@@ -16,7 +16,7 @@ from PIL import Image
 
 IMAGE_SIZE = 64
 MODEL_DIRECTORY = 'data/models/pretrained_model.tar'
-INPUT_IMAGE = 'data/custom_dataset/Test1.png'
+INPUT_IMAGE = 'data/custom_dataset/natural1.png'
 INPUT_DIRECTORY = None
 SIGMA_VAL = 0.01
 TIMESTAMP = str(int(time.time()*1e7))
