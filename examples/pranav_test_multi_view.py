@@ -1,7 +1,3 @@
-"""
-Demo deform.
-Deform template mesh based on input silhouettes and camera pose
-"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -18,6 +14,8 @@ import PIL
 from PIL import Image
 import soft_renderer as sr
 import re
+
+# import segment as seg
 
 def sorted_alphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -94,7 +92,6 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     
     cameras = []
-    # for _ in range(1000):
     for i in range(72):
         cameras.append([2.732, 0., i*5.])
     cameras = np.array(cameras).astype('float32')
@@ -106,7 +103,7 @@ def main():
     viewpoints = torch.from_numpy(cameras[:, 2])
     transform.set_eyes_from_angles(camera_distances, elevations, viewpoints)
 
-    loop = tqdm.tqdm(list(range(0, 2000)))
+    loop = tqdm.tqdm(list(range(0, 250)))
     writer = imageio.get_writer(os.path.join(args.output_dir, 'deform.gif'), mode='I')
     for i in loop:
         images_gt = torch.from_numpy(images).cuda()
