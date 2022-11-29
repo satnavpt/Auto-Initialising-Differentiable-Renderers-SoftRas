@@ -10,8 +10,6 @@ import imageio
 import argparse
 
 # deal with images
-import PIL
-from PIL import Image
 import soft_renderer as sr
 import re
 
@@ -114,6 +112,9 @@ def main():
         mesh = lighting(mesh)
         mesh = transform(mesh)
         images_pred = rasterizer(mesh)
+
+        print(images_pred.shape)
+        print(images_gt.shape)
 
         # optimize mesh with silhouette reprojection error and
         # geometry constraints
