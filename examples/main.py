@@ -8,12 +8,11 @@ import init_mesh as meshInit
 import segment as seg
 import build_mesh as meshBuild
 import imageio
-from pytorch3d.utils import ico_sphere
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
-segment = False
+segment = True
 initMesh = True
 cameraPred = False
 
@@ -24,7 +23,8 @@ def sorted_alphanumeric(data):
 
 # take a folder of images as input
 
-input_folder = 'data/aloi/sil_grey_256/3'
+# input_folder = 'data/aloi/sil_grey_256/1'
+input_folder = 'data/bottle_image/bottle_image/bottle_png_low_resolution'
 images = []
 for image in sorted_alphanumeric(os.listdir(input_folder)):
     im_file = os.path.join(input_folder, image)
@@ -52,8 +52,6 @@ if segment:
 images = np.transpose(images, (0,3,1,2))
 # generate mesh prediction for silhouettes
 
-# imageio.v2.imsave('test.png', np.transpose(images[0], (1,2,0)))
-
 mesh_init = sr.Mesh.from_obj('data/obj/sphere/sphere_1922.obj')
 if initMesh:
     mi = meshInit.Initialiser(images[0])
@@ -63,7 +61,7 @@ if initMesh:
 
 output_dir = 'data/results/buildMesh'
 batch_size = 72
-exp_name = '3-apricot-initmesh'
+exp_name = 'nat-image-bottle-meshinit'
 iters = 2000
 m = meshBuild.Builder(exp_name, images, cameras, mesh_init, batch_size, output_dir, device, iters)
 m.build_mesh()

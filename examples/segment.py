@@ -5,7 +5,7 @@ class Segment:
     def __init__(self, device) -> None:
         # self.model = torch.hub.load('pytorch/vision:v0.10.0', 'deeplabv3_resnet101', weights=DeepLabV3_ResNet101_Weights.DEFAULT)
         self.device = device
-        self.model = tv.models.segmentation.deeplabv3_resnet101(weights="DEFAULT")
+        self.model = tv.models.segmentation.deeplabv3_resnet50(weights="DEFAULT")
         self.model.eval()
         self.model.to(self.device)
         self.preprocess = tv.transforms.Compose([

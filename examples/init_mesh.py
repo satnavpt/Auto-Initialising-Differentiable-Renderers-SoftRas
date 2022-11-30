@@ -163,15 +163,12 @@ class Initialiser:
         self.objheight, self.top = self.vert()
         self.objwidth, self.left = self.horiz()
         self.im_dim = im_dim
-        # print("h: ", self.objheight, ", w: ", self.objwidth)
 
     def vert(self):
         rows = []
         for i, row in enumerate(self.visible):
             if np.isin(1, row):
                 rows.append(i)
-        # print("top: ", rows[0])
-        # print("bottom: ", rows[len(rows)-1])
         return rows[len(rows)-1] - rows[0], rows[0]
 
     def horiz(self):
@@ -179,8 +176,6 @@ class Initialiser:
         for i, col in enumerate(np.transpose(self.visible)):
             if np.isin(1, col):
                 cols.append(i)
-        # print("left: ", cols[0])
-        # print("right: ", cols[len(cols)-1])
         return cols[len(cols)-1] - cols[0], cols[0]
 
     def initialise(self, mesh, orig_rad = 90):
@@ -189,14 +184,12 @@ class Initialiser:
 
         self.horizontal_scale(mesh, width_scale)
         self.vertical_scale(mesh, height_scale)
-
         
         orig_top = (self.im_dim/2) - orig_rad/height_scale
         orig_left = (self.im_dim/2) - orig_rad/width_scale
-        width_per_pixel = (((1/width_scale))/(orig_rad/width_scale))
-        height_per_pixel = (((1/height_scale))/(orig_rad/height_scale))
-        horiz_shift = (orig_left - self.left) * width_per_pixel
-        vert_shift = (orig_top - self.top) * height_per_pixel
+        shift_per_pixel = 1/orig_rad
+        horiz_shift = (orig_left - self.left) * shift_per_pixel
+        vert_shift = (orig_top - self.top) * shift_per_pixel
 
         self.horizontal_shift(mesh, horiz_shift)
         self.vertical_shift(mesh, vert_shift)
@@ -207,14 +200,14 @@ class Initialiser:
         print("img left: ", self.left)
         print("sphere left: ", orig_left)
         print("horiz shift: ", horiz_shift)
-        print("width per pixel: ", width_per_pixel)
+        print("width per pixel: ", shift_per_pixel)
         print("\n")
         print("h scale: ", height_scale)
         print("orig_rad: ", orig_rad)
         print("img top: ", self.top)
         print("sphere top: ", orig_top)
         print("vert shift: ", vert_shift)
-        print("height per pixel: ", height_per_pixel)
+        print("height per pixel: ", shift_per_pixel)
         print("\n")
 
     def horizontal_scale(self, mesh, scale):
@@ -240,3 +233,4 @@ class Initialiser:
         y = torch.unsqueeze((y + shift), 0)
         i = torch.arange(mesh.vertices[0].size(0)).long()
         mesh.vertices[0,i,1] = y
+

@@ -1,0 +1,307 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{aloi}{misc}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=4b4fb2773b86bdced6929c715f0cb0e3}{%
+           family={Geusebroek},
+           familyi={G\bibinitperiod},
+           given={Jan-Mark},
+           giveni={J\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=524d5904fc060b9afb9d69dd29ecd481}{%
+           family={Burghouts},
+           familyi={B\bibinitperiod},
+           given={Gertjan\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3090d451b447acc5215efcb8ebdd8e46}{%
+           family={Smeulders},
+           familyi={S\bibinitperiod},
+           given={Arnold\bibnamedelima W.M.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e5616c1d94e327f061da540da030f31}
+      \strng{fullhash}{275328b244c8dd9a9cdf0f90642c34a6}
+      \strng{bibnamehash}{8e5616c1d94e327f061da540da030f31}
+      \strng{authorbibnamehash}{8e5616c1d94e327f061da540da030f31}
+      \strng{authornamehash}{8e5616c1d94e327f061da540da030f31}
+      \strng{authorfullhash}{275328b244c8dd9a9cdf0f90642c34a6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Vision}
+      \field{title}{The Amsterdam Library of Object Images}
+      \field{year}{2005}
+      \verb{urlraw}
+      \verb https://doi.org/10.1023/B:VISI.0000042993.50813.60
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1023/B:VISI.0000042993.50813.60
+      \endverb
+    \endentry
+    \entry{shapenet}{misc}{}
+      \name{author}{13}{}{%
+        {{un=0,uniquepart=base,hash=bf99ab76416eda8e5726a0557ac92583}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Angel\bibnamedelima X.},
+           giveni={A\bibinitperiod\bibinitdelim X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5f84e30e5cf00a362dfcbcca460dd64}{%
+           family={Funkhouser},
+           familyi={F\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d4e5ccdf2edc6a547ab14d5b0113a71}{%
+           family={Guibas},
+           familyi={G\bibinitperiod},
+           given={Leonidas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40c20cccc8bd195351b031b9a1a0e961}{%
+           family={Hanrahan},
+           familyi={H\bibinitperiod},
+           given={Pat},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=90296b22383e2e87596451120ca7e80b}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Qixing},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb461a98a0ab0c6164b138bbc6980c91}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zimo},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e29c20003a517abaaac28852301c03c2}{%
+           family={Savarese},
+           familyi={S\bibinitperiod},
+           given={Silvio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bad0a30ec9610ab126c95e2785c806c4}{%
+           family={Savva},
+           familyi={S\bibinitperiod},
+           given={Manolis},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5abaf8ffacdb02cbfe12fca8f3d327cb}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Shuran},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18c26ddba8b9dd77f278213fd4e93ce4}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2bbe6a54045fb885f5d23a8bdd1ebb0d}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Jianxiong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b182798c336bebfb4b9120e5cf6a1c2b}{%
+           family={Yi},
+           familyi={Y\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7d644ffcde545cbf48ce06126689b74c}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Fisher},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Stanford University, Princeton University, Toyota Technological Institute at Chicago}%
+      }
+      \strng{namehash}{88bf106f279cb3a5675508670ef0a9d9}
+      \strng{fullhash}{578e3b3c4ff65219a2135cf57ed169ba}
+      \strng{bibnamehash}{88bf106f279cb3a5675508670ef0a9d9}
+      \strng{authorbibnamehash}{88bf106f279cb3a5675508670ef0a9d9}
+      \strng{authornamehash}{88bf106f279cb3a5675508670ef0a9d9}
+      \strng{authorfullhash}{578e3b3c4ff65219a2135cf57ed169ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{arXiv:1512.03012 [cs.GR]}
+      \field{title}{ShapeNet: An Information-Rich 3D Model Repository}
+      \field{year}{2015}
+    \endentry
+    \entry{deeplab}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=9dddfcfd529634a150ee38ee5c0203d7}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Liang{-}Chieh},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0b33c7651e3d639b1e91032533984f9}{%
+           family={Papandreou},
+           familyi={P\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c62e96f68033a3d3cd4639e35a2de4da}{%
+           family={Schroff},
+           familyi={S\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c707ec5b5997dc408a14a34a8380166c}{%
+           family={Adam},
+           familyi={A\bibinitperiod},
+           given={Hartwig},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5b195b34f54d3e071b82ddb71e157be1}
+      \strng{fullhash}{19c2ee3db8f1e14eeb04ec0f3fffa9f5}
+      \strng{bibnamehash}{5b195b34f54d3e071b82ddb71e157be1}
+      \strng{authorbibnamehash}{5b195b34f54d3e071b82ddb71e157be1}
+      \strng{authornamehash}{5b195b34f54d3e071b82ddb71e157be1}
+      \strng{authorfullhash}{19c2ee3db8f1e14eeb04ec0f3fffa9f5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Rethinking Atrous Convolution for Semantic Image Segmentation}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.05587
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.05587
+      \endverb
+    \endentry
+    \entry{neural3dmeshrenderer}{misc}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3dec967720dd712f23621ca865e1e052}{%
+           family={Kato},
+           familyi={K\bibinitperiod},
+           given={Hiroharu},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c9afd2d8430ddcb1704682979e376f4}{%
+           family={Ushiku},
+           familyi={U\bibinitperiod},
+           given={Yoshitaka},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7fd9aa2606be6363f630e64d6743ad75}{%
+           family={Harada},
+           familyi={H\bibinitperiod},
+           given={Tatsuya},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{13407b71f3f406080fa3369c37284ebb}
+      \strng{fullhash}{fac796b255204b6d2a713bac6729b9fd}
+      \strng{bibnamehash}{13407b71f3f406080fa3369c37284ebb}
+      \strng{authorbibnamehash}{13407b71f3f406080fa3369c37284ebb}
+      \strng{authornamehash}{13407b71f3f406080fa3369c37284ebb}
+      \strng{authorfullhash}{fac796b255204b6d2a713bac6729b9fd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neural 3D Mesh Renderer}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1711.07566
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1711.07566
+      \endverb
+    \endentry
+    \entry{softras}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b2cc3418d24008540f68aff98eab379c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Shichen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a519f8777370f1b37e684e2e82b4ddc6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianye},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f383bae0c1d8c690af7c92ca8abd92c1}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Weikai},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2620b9afd37cca5b9b7354f67c036d4d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b3334c59b03e7d4cd94870fb545172b}
+      \strng{fullhash}{4f7f206ea62a80b0cf79de8b93beb552}
+      \strng{bibnamehash}{8b3334c59b03e7d4cd94870fb545172b}
+      \strng{authorbibnamehash}{8b3334c59b03e7d4cd94870fb545172b}
+      \strng{authornamehash}{8b3334c59b03e7d4cd94870fb545172b}
+      \strng{authorfullhash}{4f7f206ea62a80b0cf79de8b93beb552}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1904.01786
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1904.01786
+      \endverb
+      \keyw{Computer Vision and Pattern Recognition (cs.CV),FOS: Computer and information sciences,FOS: Computer and information sciences}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

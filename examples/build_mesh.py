@@ -73,7 +73,11 @@ class Builder:
         rasterizer = sr.SoftRasterizer(image_size=256, sigma_val=1e-4, aggr_func_rgb='hard')
         optimizer = torch.optim.Adam(model.parameters(), 0.01, betas=(0.5, 0.99))
 
-        images = self.images.astype('float32') / 255.
+        try:
+            images = self.images.astype('float32') / 255.
+        except:
+
+            images = self.images.cpu().detach().numpy().astype('float32') / 255.
         cameras = self.cameras
 
         camera_distances = torch.from_numpy(cameras[:, 0])
