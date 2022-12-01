@@ -8,11 +8,12 @@ import init_mesh as meshInit
 import segment as seg
 import build_mesh as meshBuild
 import imageio
+import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
-segment = True
+segment = False
 initMesh = True
 cameraPred = False
 
@@ -23,8 +24,9 @@ def sorted_alphanumeric(data):
 
 # take a folder of images as input
 
-# input_folder = 'data/aloi/sil_grey_256/1'
-input_folder = 'data/bottle_image/bottle_image/bottle_png_low_resolution'
+input_folder = 'data/aloi/sil_grey_256/1'
+# input_folder = 'data/shapenet'
+# input_folder = 'data/natural/bottle'
 images = []
 for image in sorted_alphanumeric(os.listdir(input_folder)):
     im_file = os.path.join(input_folder, image)
@@ -37,6 +39,9 @@ images = np.array(images)
 cameras = []
 for i in range(72):
     cameras.append([2.732, 0., i*5.])
+# for i in [-60., -30., 0., 30., 60.]:
+#     for j in range(24):
+#         cameras.append([2.732, i, -j*15.])
 cameras = np.array(cameras).astype('float32')
 
 # estimate viewpoints
@@ -50,6 +55,7 @@ if segment:
     s = seg.Segment(device)
     images = s.segmentMany(images).cpu()
 images = np.transpose(images, (0,3,1,2))
+
 # generate mesh prediction for silhouettes
 
 mesh_init = sr.Mesh.from_obj('data/obj/sphere/sphere_1922.obj')
@@ -61,7 +67,7 @@ if initMesh:
 
 output_dir = 'data/results/buildMesh'
 batch_size = 72
-exp_name = 'nat-image-bottle-meshinit'
+exp_name = '1-teddy-meshinit'
 iters = 2000
 m = meshBuild.Builder(exp_name, images, cameras, mesh_init, batch_size, output_dir, device, iters)
 m.build_mesh()

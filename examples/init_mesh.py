@@ -233,4 +233,3 @@ class Initialiser:
         y = torch.unsqueeze((y + shift), 0)
         i = torch.arange(mesh.vertices[0].size(0)).long()
         mesh.vertices[0,i,1] = y
-

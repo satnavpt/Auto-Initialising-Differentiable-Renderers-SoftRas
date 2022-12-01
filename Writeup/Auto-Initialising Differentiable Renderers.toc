@@ -1,41 +1,49 @@
 \contentsline {section}{\numberline {1}Introduction and Motivation}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Introduction to the Problem}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Background and Related Work}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Overview of the Idea}{4}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Silhouette Initialisation}{5}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Mesh Initialisation}{5}{subsubsection.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}Dataset Investigation}{5}{subsubsection.1.3.3}%
-\contentsline {subsubsection}{\numberline {1.3.4}(Extension) Camera Parameter Initialisation}{6}{subsubsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.1}Introduction to the Problem: Pranav Talluri}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Background and Related Work: Pranav Talluri}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Overview of the Idea: Pranav Talluri}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Silhouette Initialisation: Pranav Talluri}{5}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Mesh Initialisation: Pranav Talluri}{5}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Dataset Investigation: Pranav Talluri}{5}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Camera Parameter Initialisation: Pranav Talluri and Ke Ding}{6}{subsubsection.1.3.4}%
 \contentsline {section}{\numberline {2}Method}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Baseline Algorithm}{7}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Soft Rasteriser}{7}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Fitting Procedure}{7}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Data}{8}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Algorithm Improvements}{8}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Data}{8}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Silhouette Initialisation}{10}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Mesh Initialisation}{10}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Implementation Details}{11}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Data Pipeline}{11}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Silhouette Initialisation}{12}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Mesh Initialisation}{12}{subsubsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.4}Data Pipelines}{13}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Fitting Procedure}{15}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Experiments and Evaluation}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Datasets}{16}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Quantitive}{16}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Qualitative}{16}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Silhouette Initialisation}{16}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Quantitive}{16}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Qualitative}{16}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Mesh Initialisation}{16}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Quantitive}{16}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Qualitative}{16}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Camera Initialisation}{16}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Quantitive}{16}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Qualitative}{16}{subsubsection.3.4.2}%
-\contentsline {section}{\numberline {4}Conclusions and Future Directions}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Conclusions}{17}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Discussion of Limitations}{17}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Future Directions}{17}{subsection.4.3}%
-\contentsline {section}{References}{18}{section*.23}%
+\contentsline {subsubsection}{\numberline {2.1.1}Soft Rasteriser: Pranav Talluri}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Fitting Procedure: Pranav Talluri}{7}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Data: Pranav Talluri}{8}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Algorithm Improvements}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Data: Pranav Talluri}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Silhouette Initialisation: Pranav Talluri}{10}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Mesh Initialisation: Pranav Talluri}{10}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Implementation Details}{12}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Data Pipeline: Pranav Talluri}{12}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Silhouette Initialisation: Pranav Talluri}{14}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Mesh Initialisation: Pranav Talluri}{15}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Fitting Procedure: Pranav Talluri}{17}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Experiments and Evaluation}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datasets}{18}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}ALOI and ShapeNet: Pranav Talluri}{18}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Natural Images: Pranav Talluri}{18}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Silhouette Initialisation: Pranav Talluri}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Mesh Initialisation: Pranav Talluri}{20}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}ALOI: Pranav Talluri}{20}{subsubsection.3.3.1}%
+\contentsline {paragraph}{\numberline {3.3.1.1}Pot}{20}{paragraph.3.3.1.1}%
+\contentsline {paragraph}{\numberline {3.3.1.2}Moisturiser}{21}{paragraph.3.3.1.2}%
+\contentsline {paragraph}{\numberline {3.3.1.3}Apricot}{22}{paragraph.3.3.1.3}%
+\contentsline {paragraph}{\numberline {3.3.1.4}Teddy Bear}{23}{paragraph.3.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.3.2}ShapeNet: Pranav Talluri}{24}{subsubsection.3.3.2}%
+\contentsline {paragraph}{\numberline {3.3.2.1}Plane}{24}{paragraph.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.3}Natural Images: Pranav Talluri and Yujia Yang}{25}{subsubsection.3.3.3}%
+\contentsline {paragraph}{\numberline {3.3.3.1}Bottle}{25}{paragraph.3.3.3.1}%
+\contentsline {section}{\numberline {4}Conclusions and Future Directions}{26}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Conclusions: Pranav Talluri}{26}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Discussion of Limitations: Pranav Talluri}{26}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}DeepLab for Silhouettes}{26}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Mesh Initialisation Methods}{26}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Polygon Count and Iterations}{26}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Future Directions: Pranav Talluri}{26}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Contributions}{28}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Pranav}{28}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Yujia}{28}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ke}{28}{subsection.5.3}%
+\contentsline {section}{References}{29}{subsection.5.3}%

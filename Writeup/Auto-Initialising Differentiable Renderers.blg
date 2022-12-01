@@ -1,15 +1,15 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'Auto-Initialising Differentiable Renderers.blg'
-[198] biber-MSWIN64:340> INFO - === 
-[309] Biber.pm:418> INFO - Reading 'Auto-Initialising Differentiable Renderers.bcf'
-[513] Biber.pm:978> INFO - Found 5 citekeys in bib section 0
+[262] biber-MSWIN64:340> INFO - === 
+[327] Biber.pm:418> INFO - Reading 'Auto-Initialising Differentiable Renderers.bcf'
+[533] Biber.pm:978> INFO - Found 6 citekeys in bib section 0
 [556] Biber.pm:4401> INFO - Processing section 0
-[592] Biber.pm:4592> INFO - Looking for bibtex file 'ref.bib' for section 0
-[685] bibtex.pm:1713> INFO - LaTeX decoding ...
-[705] bibtex.pm:1518> INFO - Found BibTeX data source 'ref.bib'
-[874] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[874] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[875] Biber.pm:4221> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
-[875] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[896] bbl.pm:654> INFO - Writing 'Auto-Initialising Differentiable Renderers.bbl' with encoding 'UTF-8'
-[939] bbl.pm:757> INFO - Output to Auto-Initialising Differentiable Renderers.bbl
+[577] Biber.pm:4592> INFO - Looking for bibtex file 'ref.bib' for section 0
+[650] bibtex.pm:1713> INFO - LaTeX decoding ...
+[665] bibtex.pm:1518> INFO - Found BibTeX data source 'ref.bib'
+[786] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[786] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[786] Biber.pm:4221> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[787] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[805] bbl.pm:654> INFO - Writing 'Auto-Initialising Differentiable Renderers.bbl' with encoding 'UTF-8'
+[816] bbl.pm:757> INFO - Output to Auto-Initialising Differentiable Renderers.bbl

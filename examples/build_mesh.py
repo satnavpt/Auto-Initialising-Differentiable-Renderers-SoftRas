@@ -8,8 +8,6 @@ import imageio
 import soft_renderer as sr
 import re
 
-# import segment as seg
-
 def sorted_alphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
     alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ] 
@@ -76,41 +74,43 @@ class Builder:
         try:
             images = self.images.astype('float32') / 255.
         except:
-
             images = self.images.cpu().detach().numpy().astype('float32') / 255.
         cameras = self.cameras
-
         camera_distances = torch.from_numpy(cameras[:, 0])
         elevations = torch.from_numpy(cameras[:, 1])
         viewpoints = torch.from_numpy(cameras[:, 2])
         transform.set_eyes_from_angles(camera_distances, elevations, viewpoints)
+
+        losses = []
 
         loop = tqdm.tqdm(list(range(0, self.iters)))
         writer = imageio.get_writer(os.path.join(self.output_dir, 'deform.gif'), mode='I')
         for i in loop:
             images_gt = torch.from_numpy(images).to(self.device)
             mesh, laplacian_loss, flatten_loss = model(self.batch_size)
-
-            # render
             mesh = lighting(mesh)
             mesh = transform(mesh)
-            images_pred = rasterizer(mesh)
 
-            # optimize mesh with silhouette reprojection error and
-            # geometry constraints
+            images_pred = rasterizer(mesh)
             loss = neg_iou_loss(images_pred[:, 3], images_gt[:, 3]) + \
                 0.03 * laplacian_loss + \
                 0.0003 * flatten_loss
-
             loop.set_description('Loss: %.4f' % (loss.item()))
 
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-
+            
             image = images_pred.detach().cpu().numpy()[0].transpose((1, 2, 0))
             writer.append_data((255*image).astype(np.uint8))
 
             if (i % 100 == 0) or (i == self.iters-1):
-                imageio.imsave(os.path.join(self.output_dir, 'sil_%04d_loss_%04d.png' % (i, loss.item()*10000)), (255*image[..., -1]).astype(np.uint8))
-                model(1)[0].save_obj(os.path.join(self.output_dir, ('mesh_%04d_loss_%04d.obj' % (i, loss.item()*10000))), save_texture=False)
+                imageio.imsave(os.path.join(self.output_dir, 
+                    'sil_%04d_loss_%04d.png' % (i, loss.item()*10000)), (255*image[..., -1]).astype(np.uint8))
+                model(1)[0].save_obj(os.path.join(self.output_dir,
+                    ('mesh_%04d_loss_%04d.obj' % (i, loss.item()*10000))), save_texture=False)
+                losses.append(loss.item())
+                print(loss.item())
+        
+        print(losses)
+        return losses
