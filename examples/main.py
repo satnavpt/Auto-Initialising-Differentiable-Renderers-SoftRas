@@ -16,8 +16,8 @@ print(device)
 
 segment = False
 initMesh = True
-cameraPred = True
-runReconstruction = True
+cameraPred = False
+runReconstruction = False
 
 def sorted_alphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
