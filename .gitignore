@@ -1,5 +1,10 @@
 *.tar
-data/
+data/aloi
+data/natural
+data/models
+data/reconstruction
+data/results
+data/shapenet
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

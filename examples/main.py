@@ -7,6 +7,7 @@ import soft_renderer as sr
 import init_mesh as meshInit
 import segment as seg
 import build_mesh as meshBuild
+import camera as camInit
 import imageio
 import matplotlib.pyplot as plt
 
@@ -15,7 +16,8 @@ print(device)
 
 segment = False
 initMesh = True
-cameraPred = False
+cameraPred = True
+runReconstruction = True
 
 def sorted_alphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -44,10 +46,21 @@ for i in range(72):
 #         cameras.append([2.732, i, -j*15.])
 cameras = np.array(cameras).astype('float32')
 
-# estimate viewpoints
-
+# SfM camera relative pose estimation using colmap
 if cameraPred:
-    pass
+    cameras = []
+    output_path = "data/reconstruction"  #reconstruction path
+    sfm = camInit.SfMCamera(output_path, "data/aloi/png2/1")
+    if runReconstruction:
+        sfm.reconstruct()
+        camera_angle_lst = sfm.get_camera_extrinsics(is_dense=True)
+    else:
+        camera_angle_lst = sfm.get_camera_extrinsics(is_dense=True)
+
+    for ang in camera_angle_lst:
+        cameras.append([2.732, 0., ang])
+
+    cameras = np.array(cameras).astype('float32')
 
 # segment images to produce silhouettes
 
@@ -67,7 +80,7 @@ if initMesh:
 
 output_dir = 'data/results/buildMesh'
 batch_size = 72
-exp_name = '1-teddy-meshinit'
+exp_name = '1-teddy-meshinit-camerainit'
 iters = 2000
 m = meshBuild.Builder(exp_name, images, cameras, mesh_init, batch_size, output_dir, device, iters)
 m.build_mesh()
